@@ -1,10 +1,10 @@
 .386
 .model flat, stdcall
 
-; ============================================
+
 ; BMI CALCULATOR - ASSEMBLY PROGRAM
 ; Topics: Selection Statement, Array, Loop
-; ============================================
+
 
 .data
     ; Data segment - Define arrays and constants
@@ -57,9 +57,9 @@ LOOP_START:
     ; EAX now contains approximated BMI
     MOV ESI, EAX                            ; ESI = BMI value
     
-    ; ============================================
+    
     ; SELECTION STATEMENT - Classify BMI
-    ; ============================================
+    
     
     ; Check if BMI >= 30 (Obese)
     CMP ESI, 30
