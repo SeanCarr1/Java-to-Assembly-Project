@@ -26,13 +26,15 @@ start:
     int 21h
 
     xor si,si
-    mov cl,5
+    mov cx,5
 
 loop_start:
     mov al,weights[si]
-    xor ah,ah
-    mov bl,2
-    div bl
+    mov bl,100
+    mul bl
+    xor dx,dx
+    mov bx,289
+    div bx
     mov bmi,al
 
     lea dx,weight_msg
@@ -47,14 +49,14 @@ loop_start:
     int 21h
 
     mov al,bmi
-    cmp al,30
-    jae is_obese
+    cmp al,29
+    ja is_obese
 
-    cmp al,25
-    jae is_overweight
+    cmp al,24
+    ja is_overweight
 
-    cmp al,18
-    jae is_normal
+    cmp al,17
+    ja is_normal
 
     jmp is_underweight
 
